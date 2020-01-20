@@ -1,0 +1,64 @@
+body {
+    background-image: url('gradient.jpg');
+    background-size: cover;
+}
+
+h1 {
+    color: rgb(163, 53, 26);
+    margin-left: 20px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid pink;
+    width: 500px;
+}
+
+
+#form {
+    width: 200px;
+    height: 300px;
+    float: left;
+}
+
+#button {
+    width: 100px;
+    height: 70px;
+    background-color:rgb(189, 223, 236);
+    border: 2px solid rgb(17, 54, 82);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px;
+    margin: 30px;
+}
+
+#button:hover {
+    background-color: pink;
+}
+
+.books {
+    width: 250px;
+    height: 100px;
+    border: 10px solid rgb(189, 223, 236);
+    background-color: rgb(231, 229, 107);
+    background-image: url('book.png');
+    background-size: 80px;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 800;
+    text-align: right;
+    padding: 20px;
+    margin: 20px;
+    transition: all 1s;
+}
+
+.books:hover {
+    transform: scale(1.1);
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+}
