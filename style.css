@@ -22,6 +22,10 @@ h1 {
     display: none;
 }
 
+.input {
+    width: 180px;
+}
+
 #button {
     width: 100px;
     height: 70px;
