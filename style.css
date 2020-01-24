@@ -11,11 +11,15 @@ h1 {
     width: 500px;
 }
 
-
-#form {
+.box {
+    float: left;
+    display: block;
     width: 200px;
     height: 300px;
-    float: left;
+}
+
+#form {
+    display: none;
 }
 
 #button {
@@ -43,6 +47,7 @@ h1 {
     background-image: url('book.png');
     background-size: 80px;
     background-repeat: no-repeat;
+    background-position: 5% 90%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     font-weight: 800;
