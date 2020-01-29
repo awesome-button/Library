@@ -1,41 +1,50 @@
-const library = () => {
+const library = document.getElementById('container');
 
-    const newBookButton = document.getElementById('button');
-    let form = document.getElementById('form');
-    
-    const addButton = document.getElementsByClassName('add')[0];
+const newTitle = document.getElementsByClassName('title')[0];
+const newAuthor = document.getElementsByClassName('author')[0];
+const newYear = document.getElementsByClassName('year')[0];
 
-    let library = document.getElementById('container');
-    let title = document.getElementsByClassName('title')[0];
-    let author = document.getElementsByClassName('author')[0];
-    let year = document.getElementsByClassName('year')[0];
-    
-    const newBook = () => {
-        if (form.style.display === 'block') {
-            form.style.display = 'none';
-        } else {
-            form.style.display = 'block';
-        }
+const newBookButton = document.getElementById('button');
+const addButton = document.getElementsByClassName('add')[0];
+
+class Book {
+    constructor(title, author, year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
     }
-    
-    const addBookToLibrary = () => {
+
+    createCard() {
         let card = document.createElement('div');
         card.setAttribute('class', 'books');
-        card.innerText = `${title.value}\n
-        ${author.value}\n
-        ${year.value}`
+        card.innerText = `${this.title}\n
+        ${this.author}\n
+        ${this.year}`
         library.appendChild(card);
         clearForm();
     }
-
-    const clearForm = () => {
-        title.value = "";
-        author.value = "";
-        year.value = "";
-    }
-
-    newBookButton.addEventListener('click', newBook);
-    addButton.addEventListener('click', addBookToLibrary);
 }
 
-library();
+function addBookToLibrary() {
+    let newBook = new Book(newTitle.value, newAuthor.value, newYear.value);
+    newBook.createCard();
+}
+
+
+function showForm() {
+    let form = document.getElementById('form');
+    if (form.style.display === 'block') {
+        form.style.display = 'none';
+    } else {
+        form.style.display = 'block';
+    }
+} 
+
+function clearForm() {
+    newTitle.value = "";
+    newAuthor.value = "";
+    newYear.value = "";
+}
+
+newBookButton.addEventListener('click', showForm);
+addButton.addEventListener('click', addBookToLibrary);
