@@ -42,6 +42,7 @@ function displayOrRemove(book) {
 
     delButton.addEventListener('click', () => {
         container.removeChild(card);
+        library.splice(library.indexOf(book), 1);
     })
 }
 
